@@ -1,0 +1,6 @@
+﻿@model MVCTest.Models.SelectListVM
+
+@Html.DropDownListFor(
+        x => x.SelectedID,
+        new SelectList(Model.Items, "Value", "Text", Model.SelectedID)
+)

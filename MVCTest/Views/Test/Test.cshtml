@@ -1,0 +1,31 @@
+﻿@model object
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+@using (Html.BeginForm("Test","Test")) {
+    @Html.ValidationSummary(true)
+
+    @Html.Hidden("contextID", (string)ViewBag.ContextID)
+                                             
+    <fieldset>
+        <legend>TestVM</legend>
+
+        @Html.EditorForModel()
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Main Page", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
